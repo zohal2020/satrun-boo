@@ -1,0 +1,340 @@
+/* Custom CSS for Foodie Hub Saturn */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Body and general styles */
+  body {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 50%, #2d1b69 100%);
+    color: #ffffff;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Rainbow text effect */
+  .rainbow-text {
+    background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbow 3s ease-in-out infinite;
+  }
+  
+  @keyframes rainbow {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Saturn Navbar */
+  .saturn-navbar {
+    background: linear-gradient(
+      90deg,
+      rgba(15, 15, 35, 0.95) 0%,
+      rgba(26, 26, 58, 0.95) 50%,
+      rgba(45, 27, 105, 0.95) 100%
+    );
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .saturn-logo {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("/placeholder.svg?height=1080&width=1920")
+      center / cover;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero-overlay {
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  }
+  
+  /* Saturn Planet Animation */
+  .saturn-rings {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+  
+  .saturn-planet {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #ffd700, #ffb347, #ff8c00);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.6);
+    animation: rotate 10s linear infinite;
+  }
+  
+  .saturn-rings::before,
+  .saturn-rings::after {
+    content: "";
+    position: absolute;
+    border: 3px solid;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .saturn-rings::before {
+    width: 120px;
+    height: 120px;
+    border-color: rgba(255, 255, 255, 0.3);
+    animation: rotate 15s linear infinite reverse;
+  }
+  
+  .saturn-rings::after {
+    width: 140px;
+    height: 140px;
+    border-color: rgba(255, 255, 255, 0.2);
+    animation: rotate 20s linear infinite;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  /* Saturn Background */
+  .saturn-bg {
+    background: linear-gradient(135deg, #1a1a3a 0%, #2d1b69 50%, #4a0e4e 100%);
+    position: relative;
+  }
+  
+  .saturn-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(255, 0, 150, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(0, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  
+  /* Saturn Button */
+  .saturn-btn {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7);
+    background-size: 300% 300%;
+    border: none;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+    animation: gradient-shift 3s ease infinite;
+  }
+  
+  .saturn-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+  
+  @keyframes gradient-shift {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Restaurant Cards */
+  .restaurant-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .restaurant-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  
+  .restaurant-card img {
+    transition: transform 0.3s ease;
+  }
+  
+  .restaurant-card:hover img {
+    transform: scale(1.1);
+  }
+  /* Menu Sections */
+.menu-section {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a3a 100%);
+    display: none;
+    position: relative;
+  }
+  
+  .menu-section:target {
+    display: block;
+  }
+  
+  .menu-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .menu-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateX(10px);
+  }
+  /* Order Form */
+.order-form {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  
+  .form-control,
+  .form-select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+  
+  .form-control:focus,
+  .form-select:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #4ecdc4;
+    box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+    color: white;
+  }
+  
+  .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .form-check-input:checked {
+    background-color: #4ecdc4;
+    border-color: #4ecdc4;
+  }
+  
+  /* About Section */
+  .stat-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+  }
+  
+  .stat-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Social Icons */
+  .social-icon {
+    color: #ffffff;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+  
+  .social-icon:hover {
+    color: #4ecdc4;
+    transform: translateY(-5px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .hero-section h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-section p {
+      font-size: 1.2rem;
+    }
+  
+    .saturn-rings {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .saturn-planet {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .saturn-rings::before {
+      width: 90px;
+      height: 90px;
+    }
+  
+    .saturn-rings::after {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .restaurant-card:hover {
+      transform: translateY(-5px) scale(1.01);
+    }
+  
+    .menu-item:hover {
+      transform: none;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+  
+    .hero-section p {
+      font-size: 1rem;
+    }
+  
+    .display-4 {
+      font-size: 2rem;
+    }
+  
+    .display-5 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #1a1a3a;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #4ecdc4, #45b7d1);
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #45b7d1, #4ecdc4);
+  }
